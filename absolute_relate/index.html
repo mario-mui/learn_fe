@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <!-- 未最小影响-->
+  <style>
+    .test {width:25em; margin:2em auto;}
+    .box { padding:2em; border:1px solid #beceeb; border-radius:2px; background-color:#f0f3f9; position:relative; }
+    .ok { color:green; font-size:6em; position:absolute; right:-11px; bottom:-.5em; }
+  </style>
+
+  <!--  最小影响-->
+  <style>
+    .test1 {width:25em; margin:2em auto;}
+    .box1 { padding:2em; border:1px solid #beceeb; border-radius:2px; background-color:#f0f3f9; }
+    .rel1 { position:relative; }
+    .ok1 { color:green; font-size:6em; position:absolute; right:-10px; top:-1em; }
+  </style>
+</head>
+<body>
+
+
+<div class="test">
+  <div class="box">
+    CSS relative相对定位的最小化影响原则
+    <strong class="ok">√</strong>
+  </div>
+</div>
+
+
+<div class="test1">
+  <div class="box1">CSS relative相对定位的最小化影响原则</div>
+  <div class="rel1"><strong class="ok1">√</strong></div>
+</div>
+
+</body>
+</html>

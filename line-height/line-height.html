@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>line-height</title>
+  <style>
+    .tabmenu {margin:0;}
+    .tabmenu li{display:inline-block;}
+    .tabmenu li a {
+      display:block;
+      padding:5px 10px;
+      margin:0 10px 0 0;
+      border:1px solid #91a7b4;
+      border-radius:0 0 5px 5px;
+      background:#e3f1f8;
+      color:#333;
+      text-decoration:none;
+    }
+    #tab1:target, #tab2:target, #tab3:target, #tab4:target, #tab5:target,#tab6:target {
+      z-index: 1;
+    }
+    .tabList {
+      margin-top:50px;
+    }
+    .tab_content {
+      position: absolute;
+      width:600px;
+      height:570px;
+      padding:15px;
+      border:1px solid #91a7b4;
+      box-shadow:0 2px 3px rgba(0,0,0,0.1);
+      color:#666;
+      background:#fff;
+    }
+    .test1{font-size:20px; line-height:0; border:1px solid #cccccc; background:#eeeeee;}
+    .test2{font-size:0; line-height:20px; border:1px solid #cccccc; background:#eeeeee;}
+
+    .p_pending:before{
+      padding: 100%;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+
+<ul class="tabmenu">
+  <li> <a href="#tab1">行内框盒子模型</a></li>
+  <li> <a href="#tab2">高度由谁决定的??</a></li>
+  <li> <a href="#tab3">高度堆积</a></li>
+  <li> <a href="#tab4">最高高度</a></li>
+  <li> <a href="#tab5">line-height值区别</a></li>
+  <li> <a href="#tab6">字体和基线</a></li>
+  <li> <a href="#tab7">行高的应用</a></li>
+</ul>
+
+<div class="tabList">
+
+  <div id="tab6" class="tab_content">
+    <span style="font-family: arial">X</span>
+    <span style="font-family: Microsoft YaHei">X</span>
+    <span style="font-family: Simsun">X</span>
+  </div>
+
+  <div id="tab1" class="tab_content">
+    <!--例子2 行内框盒子模型-->
+    <!-- 这里有多少种类型的BOX呢?? -->
+    <p id="clientHeight">这是一行普通的文字，这里有个 <em>em</em> <span> span </span> 标签。<br> 第二行</p>
+
+    <!-- p containing boxes-->
+    <!-- em inline boxes-->
+    <!-- 第二行,第一行 为 line boxes -->
+    <!-- content area 围绕着文字看不见的boxes,它的高度由font-size 决定 -->
+
+  </div>
+
+  <div id="tab2" class="tab_content">
+
+    <div>test</div>
+    <!-- 例子1 高度由谁决定的??字体 or 行高-->
+    <div class="test1">测试</div>
+
+    <br>
+    <br>
+
+    <div class="test2">测试</div>
+
+  </div>
+
+  <div id="tab3" class="tab_content">
+
+    <!-- 例子3-->
+    <div>
+      <p>春哥纯爷们</p>
+    </div>
+
+    <div>
+      <p>春</p>
+      <p>哥</p>
+      <p>纯</p>
+      <p>爷</p>
+      <p>们</p>
+    </div>
+
+    <!--一个没有设置height属性的div的高度就是由一个一个line boxes的高度堆积而成的。-->
+  </div>
+
+  <div id="tab4" class="tab_content">
+
+    <!--例子4 -->
+    <p id="height" style="line-height:20px;">取手下line-height<span style="line-height:40px;">最高</span>的值</p>
+    <p>第二行</p>
+    <!--line boxes的高度就是40像素了-->
+
+
+  </div>
+
+  <div id="tab5" class="tab_content">
+
+    <div style="font-size: 20px;line-height: 1.5;width: 300px">
+      <span> line-height:1.5</span>
+      <p style="font-size: 60px"> font-size 为60px</p>
+    </div>
+
+    <div style="font-size: 20px;line-height: 150% ;width: 300px">
+      <span> line-height:150%</span>
+      <p style="font-size: 60px"> font-size 为60px</p>
+    </div>
+
+  </div>
+
+  <div id="tab7" class="tab_content">
+
+    <div style="background: #999;height: 300px;line-height: 300px"><img style="vertical-align: middle" src="base_line.jpg"></div>
+
+    <div style="line-height: 250px;background: #333">
+      <div style="vertical-align: middle;line-height: normal;display: inline-block">
+        <p>第一行</p>
+        <p>第二行</p>
+        <p>第三行</p>
+      </div>
+    </div>
+
+
+  </div>
+
+
+</div>
+</body>
+
+</html>

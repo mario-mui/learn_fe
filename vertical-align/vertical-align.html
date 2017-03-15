@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>vertical-align</title>
+  <style>
+    .tabmenu {margin:0;}
+    .tabmenu li{display:inline-block;}
+    .tabmenu li a {
+      display:block;
+      padding:5px 10px;
+      margin:0 10px 0 0;
+      border:1px solid #91a7b4;
+      border-radius:0 0 5px 5px;
+      background:#e3f1f8;
+      color:#333;
+      text-decoration:none;
+    }
+    #tab1:target, #tab2:target, #tab3:target, #tab4:target, #tab5:target,#tab6:target {
+      z-index: 1;
+    }
+    .tabList {
+      margin-top:50px;
+    }
+    .tab_content {
+      position: absolute;
+      width:600px;
+      height:570px;
+      padding:15px;
+      border:1px solid #91a7b4;
+      box-shadow:0 2px 3px rgba(0,0,0,0.1);
+      color:#666;
+      background:#fff;
+    }
+
+    .display-test{
+      vertical-align: middle;
+    }
+
+    .test-list >span {
+      vertical-align: middle;
+      width: 100px;
+    }
+
+    .test-list >img {
+      vertical-align: middle;
+    }
+    .text {
+      display: inline-block;
+      vertical-align: middle
+    }
+
+    .dib-baseline {
+      display: inline-block; width: 150px; height: 150px;
+      border: 1px solid #cad5eb; background-color: #f0f3f9;
+    }
+
+  </style>
+</head>
+<body>
+
+<ul class="tabmenu">
+  <li> <a href="#tab1">display 测试</a></li>
+  <li> <a href="#tab2">多行文字垂直居中</a></li>
+  <li> <a href="#tab3">图片下面有空隙</a></li>
+  <li> <a href="#tab4">对比</a></li>
+  <li> <a href="#tab5">line-height值区别</a></li>
+  <li> <a href="#tab6">字体和基线</a></li>
+</ul>
+
+<div class="tabList">
+
+  <div id="tab1" class="tab_content">
+
+    <p><img class="display-test" src="img.jpg"></p>
+
+    <div><span>left </span><img class="display-test" src="img.jpg"></div>
+
+  </div>
+
+
+
+  <div id="tab2" class="tab_content">
+    <div class="test-list">
+      <div class="text">
+        <p>文字 </p>
+        <p>文字 </p>
+        <p>文字 </p>
+      </div>
+      <img src="img.jpg">
+    </div>
+
+  </div>
+
+  <div id="tab3" class="tab_content">
+
+    <p><img src="img.jpg"></p>
+
+  </div>
+
+  <div id="tab4" class="tab_content">
+
+    <div>
+      <span class="dib-baseline"></span>
+      <span class="dib-baseline">x-baseline</span>
+    </div>
+    <br><br>
+    <div>
+      <button style="line-height: 0px ;height: 20px">行高0</button>
+      <button style="height: 20px">行高正常</button>
+    </div>
+  </div>
+
+  <div id="tab5" class="tab_content">
+
+    <div style="font-size: 20px;line-height: 1.5;width: 300px">
+      <span> line-height:1.5</span>
+      <p style="font-size: 60px"> font-size 为60px</p>
+    </div>
+
+    <div style="font-size: 20px;line-height: 150% ;width: 300px">
+      <span> line-height:150%</span>
+      <p style="font-size: 60px"> font-size 为60px</p>
+    </div>
+
+  </div>
+
+
+</div>
+</body>
+
+</html>
